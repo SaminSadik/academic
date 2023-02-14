@@ -13,13 +13,13 @@ int main()
 
     if(c=='+') cout << "\nAnswer : " << fixed << setprecision(2) << x+y << endl;
     
-    if(c=='-') cout << "\nAnswer : " << fixed << setprecision(2) << x-y << endl;
+    else if(c=='-') cout << "\nAnswer : " << fixed << setprecision(2) << x-y << endl;
     
-    if(c=='*') cout << "\nAnswer : " << fixed << setprecision(2) << x*y << endl;
+    else if(c=='*') cout << "\nAnswer : " << fixed << setprecision(2) << x*y << endl;
     
-    if(c=='/') cout << "\nAnswer : " << fixed << setprecision(2) << x/y << endl;
+    else if(c=='/') cout << "\nAnswer : " << fixed << setprecision(2) << x/y << endl;
     
-    if(c=='%')
+    else if(c=='%')
     {
         int a = x, b = y;
         if(x-a != 0 || y-b != 0) cout << "\n(Fractional values are ignored)\n";
