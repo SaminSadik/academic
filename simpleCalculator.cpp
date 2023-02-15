@@ -1,6 +1,23 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+void calculate(double x, char c, double y)
+{
+    double ans;
+
+    if(c=='+') ans = x + y;
+    else if(c=='-') ans = x - y;
+    else if(c=='*') ans = x * y;
+    else if(c=='/') ans = x / y;
+    else if(c=='%')
+    {
+        int a = x, b = y; ans = a % b;
+        if(x-a != 0 || y-b != 0) cout << "\n(Fractional values are ignored)\n";
+    }
+
+    cout << "\nAnswer : " << fixed << setprecision(2) << ans << endl;
+}
+
 int main()
 {
     cout << "~~~~~~~~~<< Simple  Calculator >>~~~~~~~~~\n";
@@ -10,21 +27,7 @@ int main()
     
     double x, y; char c;
     cin >> x >> c >> y;
-
-    if(c=='+') cout << "\nAnswer : " << fixed << setprecision(2) << x+y << endl;
-    
-    else if(c=='-') cout << "\nAnswer : " << fixed << setprecision(2) << x-y << endl;
-    
-    else if(c=='*') cout << "\nAnswer : " << fixed << setprecision(2) << x*y << endl;
-    
-    else if(c=='/') cout << "\nAnswer : " << fixed << setprecision(2) << x/y << endl;
-    
-    else if(c=='%')
-    {
-        int a = x, b = y;
-        if(x-a != 0 || y-b != 0) cout << "\n(Fractional values are ignored)\n";
-        cout << "\nAnswer : " << a % b << endl;
-    }
+    calculate(x, c, y);
 
     cout << "\n~~~~~~~~~~~~~~~~~~~~<>~~~~~~~~~~~~~~~~~~~~\n";
 
